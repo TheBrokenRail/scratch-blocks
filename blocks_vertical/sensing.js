@@ -629,6 +629,7 @@ Blockly.Blocks['sensing_of_property_menu'] = {
         "output": "String",
         "colour": Blockly.Colours.sensing.secondary,
         "colourSecondary": Blockly.Colours.sensing.secondary,
+
         "colourTertiary": Blockly.Colours.sensing.tertiary,
         "outputShape": Blockly.OUTPUT_SHAPE_ROUND
       });
@@ -650,7 +651,8 @@ Blockly.Blocks['sensing_of_object_menu'] = {
             "name": "OBJECT",
             "options": [
               ['Sprite1', 'Sprite1'],
-              ['Stage', '_stage_']
+              ['Stage', '_stage_'],
+              ['this sprite', '_this-sprite_']
             ]
           }
         ],
