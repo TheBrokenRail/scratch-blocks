@@ -622,6 +622,7 @@ Blockly.Blocks['looks_stretchmenu'] = {
    * Graphic effects drop-down menu.
    * @this Blockly.Block
    */
+
   init: function() {
     this.jsonInit(
       {
@@ -638,7 +639,8 @@ Blockly.Blocks['looks_stretchmenu'] = {
         ],
         "inputsInline": true,
         "output": "String",
-        "colour": Blockly.Colours.looks.secondary,        "colourSecondary": Blockly.Colours.looks.secondary,
+        "colour": Blockly.Colours.looks.secondary,
+        "colourSecondary": Blockly.Colours.looks.secondary,
         "colourTertiary": Blockly.Colours.looks.tertiary,
         "outputShape": Blockly.OUTPUT_SHAPE_ROUND
       });
