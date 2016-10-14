@@ -662,8 +662,7 @@ Blockly.Blocks['looks_setstretchto'] = {
         },
         {
           "type": "input_value",
-          "name": "VALUE"
-        }
+          "name": "VALUE"        }
       ],
       "inputsInline": true,
       "previousStatement": null,
@@ -691,7 +690,7 @@ Blockly.Blocks['looks_changestretchby'] = {
         },
         {
           "type": "input_value",
-          "name": "VALUE"
+          "name": "CHANGE"
         }
       ],
       "inputsInline": true,
