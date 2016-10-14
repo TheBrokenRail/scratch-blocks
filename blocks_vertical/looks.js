@@ -616,3 +616,108 @@ Blockly.Blocks['looks_nextbackdrop'] = {
       });
   }
 };
+
+Blockly.Blocks['looks_stretchmenu'] = {
+  /**
+   * Graphic effects drop-down menu.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit(
+      {
+        "message0": "%1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "STRETCH",
+            "options": [
+              ['x', 'X'],
+              ['y', 'Y']
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": Blockly.Colours.looks.secondary,        "colourSecondary": Blockly.Colours.looks.secondary,
+        "colourTertiary": Blockly.Colours.looks.tertiary,
+        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+      });
+  }
+};
+
+Blockly.Blocks['looks_setstretchto'] = {
+  /**
+   * Block to set graphic effect.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "set stretch %1 to %2",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "STRETCH"
+        },
+        {
+          "type": "input_value",
+          "name": "VALUE"
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "category": Blockly.Categories.looks,
+      "colour": Blockly.Colours.looks.primary,
+      "colourSecondary": Blockly.Colours.looks.secondary,
+      "colourTertiary": Blockly.Colours.looks.tertiary
+    });
+  }
+};
+
+Blockly.Blocks['looks_changestretchby'] = {
+  /**
+   * Block to set graphic effect.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "change stretch %1 by %2",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "STRETCH"
+        },
+        {
+          "type": "input_value",
+          "name": "VALUE"
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "category": Blockly.Categories.looks,
+      "colour": Blockly.Colours.looks.primary,
+      "colourSecondary": Blockly.Colours.looks.secondary,
+      "colourTertiary": Blockly.Colours.looks.tertiary
+    });
+  }
+};
+
+Blockly.Blocks['looks_resetstretch'] = {
+  /**
+   * Hide block.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit(
+      {
+        "message0": "reset stretch",
+        "previousStatement": null,
+        "nextStatement": null,
+        "category": Blockly.Categories.looks,
+        "colour": Blockly.Colours.looks.primary,
+        "colourSecondary": Blockly.Colours.looks.secondary,
+        "colourTertiary": Blockly.Colours.looks.tertiary
+      });
+  }
+};
