@@ -216,6 +216,27 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
     '<block type="looks_cleargraphiceffects"></block>'+
+    '<block type="looks_changestretchby">'+
+      '<value name="STRETCH">'+
+        '<shadow type="looks_stretchmenu"></shadow>'+
+      '</value>'+
+      '<value name="CHANGE">'+
+        '<shadow type="math_number">'+
+          '<field name="NUM">10</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="looks_setstretchto">'+
+      '<value name="STRETCH">'+
+        '<shadow type="looks_stretchmenu"></shadow>'+
+      '</value>'+
+      '<value name="VALUE">'+
+        '<shadow type="math_number">'+
+          '<field name="NUM">10</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="looks_resetstretch"></block>'+
     '<block type="looks_changesizeby">'+
       '<value name="CHANGE">'+
         '<shadow type="math_number">'+
