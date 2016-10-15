@@ -653,6 +653,7 @@ Blockly.Blocks['looks_setstretchto'] = {
    * @this Blockly.Block
    */
   init: function() {
+
     this.jsonInit({
       "message0": "set stretch %1 to %2",
       "args0": [
@@ -662,7 +663,8 @@ Blockly.Blocks['looks_setstretchto'] = {
         },
         {
           "type": "input_value",
-          "name": "VALUE"        }
+          "name": "VALUE"
+        }
       ],
       "inputsInline": true,
       "previousStatement": null,
@@ -722,3 +724,36 @@ Blockly.Blocks['looks_resetstretch'] = {
       });
   }
 };
+
+Blockly.Blocks['looks_stretch'] = {
+  /**
+   * Block to set graphic effect.
+   * @this Blockly.Block
+   */
+  init: function() {
+
+    this.jsonInit({
+      "message0": "stretch %1",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "STRETCH"
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "category": Blockly.Categories.looks,
+      "colour": Blockly.Colours.looks.primary,
+      "colourSecondary": Blockly.Colours.looks.secondary,
+      "colourTertiary": Blockly.Colours.looks.tertiary,
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "checkboxInFlyout": true
+    });
+  }
+};
+
+      "output": "Number",
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
+      "checkboxInFlyout": true
