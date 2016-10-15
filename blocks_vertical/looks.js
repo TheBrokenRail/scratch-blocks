@@ -585,7 +585,8 @@ Blockly.Blocks['looks_switchbackdroptoandwait'] = {
         {
           "type": "input_value",
           "name": "BACKDROP"
-        }      ],
+        }
+      ],
       "inputsInline": true,
       "previousStatement": null,
       "nextStatement": null,
