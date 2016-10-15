@@ -730,7 +730,6 @@ Blockly.Blocks['looks_stretch'] = {
    * @this Blockly.Block
    */
   init: function() {
-
     this.jsonInit({
       "message0": "stretch %1",
       "args0": [
@@ -740,8 +739,6 @@ Blockly.Blocks['looks_stretch'] = {
         }
       ],
       "inputsInline": true,
-      "previousStatement": null,
-      "nextStatement": null,
       "category": Blockly.Categories.looks,
       "colour": Blockly.Colours.looks.primary,
       "colourSecondary": Blockly.Colours.looks.secondary,
