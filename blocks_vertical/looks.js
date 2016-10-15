@@ -585,8 +585,7 @@ Blockly.Blocks['looks_switchbackdroptoandwait'] = {
         {
           "type": "input_value",
           "name": "BACKDROP"
-        }
-      ],
+        }      ],
       "inputsInline": true,
       "previousStatement": null,
       "nextStatement": null,
@@ -619,10 +618,9 @@ Blockly.Blocks['looks_nextbackdrop'] = {
 
 Blockly.Blocks['looks_stretchmenu'] = {
   /**
-   * Graphic effects drop-down menu.
+   * Stretch drop-down menu.
    * @this Blockly.Block
    */
-
   init: function() {
     this.jsonInit(
       {
@@ -649,7 +647,7 @@ Blockly.Blocks['looks_stretchmenu'] = {
 
 Blockly.Blocks['looks_setstretchto'] = {
   /**
-   * Block to set graphic effect.
+   * Block to set stretch.
    * @this Blockly.Block
    */
   init: function() {
@@ -679,7 +677,7 @@ Blockly.Blocks['looks_setstretchto'] = {
 
 Blockly.Blocks['looks_changestretchby'] = {
   /**
-   * Block to set graphic effect.
+   * Block to change stretch.
    * @this Blockly.Block
    */
   init: function() {
@@ -708,7 +706,7 @@ Blockly.Blocks['looks_changestretchby'] = {
 
 Blockly.Blocks['looks_resetstretch'] = {
   /**
-   * Hide block.
+   * Reset Stretch.
    * @this Blockly.Block
    */
   init: function() {
@@ -727,7 +725,7 @@ Blockly.Blocks['looks_resetstretch'] = {
 
 Blockly.Blocks['looks_stretch'] = {
   /**
-   * Block to set graphic effect.
+   * Block to get stretch.
    * @this Blockly.Block
    */
   init: function() {
@@ -753,7 +751,3 @@ Blockly.Blocks['looks_stretch'] = {
     });
   }
 };
-
-      "output": "Number",
-      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
-      "checkboxInFlyout": true
