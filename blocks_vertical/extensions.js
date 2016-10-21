@@ -43,6 +43,7 @@ Blockly.Blocks['extensions_block'] = {
     this._spec = '';
     this._id = '';
     this._type = 'block';
+    this._subStackCount = 0;
   },
   /**
    * Create XML to represent the (non-editable) name and arguments.
@@ -106,7 +107,8 @@ Blockly.Blocks['extensions_block'] = {
             colour.outputConnection.connect(input.connection);
             break;
           case 'i':
-            this.appendStatementInput('SUBSTACK').appendField('');
+            this.appendStatementInput('SUBSTACK' + this._subStackCount).appendField('');
+            this._subStackCount = this._subStackCount + 1;
             break;
         }
       } else {
