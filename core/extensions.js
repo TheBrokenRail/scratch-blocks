@@ -49,6 +49,15 @@ Blockly.Extensions.flyoutCategory = function() {
       block.setAttribute('gap', 16);
       var mutation = goog.dom.createDom('mutation');
       mutation.setAttribute('spec', spec);
+      var count = 0;
+      for (var n = 0; n < xmlList.length; n++) {
+        if (xmlList[n].lastChild == id) {
+          count = count + 1;
+        }
+      }
+      if (count > 0) {
+        id = id + '_' + count;
+      }
       mutation.setAttribute('id', id);
       mutation.setAttribute('type', type);
       block.appendChild(mutation);
