@@ -67,10 +67,6 @@ Blockly.Extensions.flyoutCategory = function() {
   return xmlList;
 };
 
-Blockly.Extensions.loadExtension = function(loader) {
-  eval(loader);
-};
-
 Blockly.Extensions.lookupBlock = function(blockId) {
   for (var v = 0; v < Blockly.Extensions.EXTENSIONS.length; v++) {
     for (var i = 0; i < Blockly.Extensions.EXTENSIONS[v].length; i++) {
