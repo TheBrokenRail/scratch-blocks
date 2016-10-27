@@ -497,7 +497,6 @@ Blockly.Flyout.prototype.show = function(xmlList) {
 
   this.reflowWrapper_ = this.reflow.bind(this);
   this.workspace_.addChangeListener(this.reflowWrapper_);
-
 };
 
 /**
