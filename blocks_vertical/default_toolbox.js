@@ -127,7 +127,11 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '</shadow>'+
       '</value>'+
     '</block>'+
-    '<block type="motion_ifonedgebounce"></block>'+
+    '<block type="motion_ifonedgebounce">'+
+      '<value name="OBJECT">'+
+        '<shadow type="motion_ifonedgebounce_menu"></shadow>'+
+      '</value>'+
+    '</block>'+
     '<block type="motion_setrotationstyle">'+
       '<value name="STYLE">'+
         '<shadow type="motion_setrotationstyle_menu"></shadow>'+
