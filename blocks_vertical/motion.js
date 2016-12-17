@@ -408,6 +408,36 @@ Blockly.Blocks['motion_sety'] = {
   }
 };
 
+Blockly.Blocks['motion_ifonedgebounce_menu'] = {
+  /**
+   * If on edge, bounce drop-down menu.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit(
+      {
+        "message0": "%1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "OBJECT",
+            "options": [
+              ['edge', '_edge_'],
+              ['mouse-pointer', '_mouse_'],
+              ['Sprite1', 'Sprite1']
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": Blockly.Colours.motion.secondary,
+        "colourSecondary": Blockly.Colours.motion.secondary,
+        "colourTertiary": Blockly.Colours.motion.tertiary,
+        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+      });
+  }
+};
+
 Blockly.Blocks['motion_ifonedgebounce'] = {
   /**
    * Block to bounce on edge.
@@ -415,7 +445,13 @@ Blockly.Blocks['motion_ifonedgebounce'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "if on edge, bounce",
+      "message0": "if on %1, bounce",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "OBJECT"
+        }
+      ],
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.motion,
