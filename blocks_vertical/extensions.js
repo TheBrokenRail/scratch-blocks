@@ -35,6 +35,7 @@ Blockly.Blocks['extensions_block'] = {
    */
   init: function() {
     this._jsonSpec = '';
+    this._id = '';
     this.jsonInit(this._jsonSpec);
   },
   /**
@@ -45,6 +46,7 @@ Blockly.Blocks['extensions_block'] = {
   mutationToDom: function() {
     var container = document.createElement('mutation');
     container.setAttribute('jsonSpec', this._jsonSpec);
+    container.setAttribute('identifer', this._id);
     return container;
   },
   /**
@@ -53,7 +55,8 @@ Blockly.Blocks['extensions_block'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    this._jsonSpec = xmlElement.getAttribute('spec');
+    this._jsonSpec = xmlElement.getAttribute('jsonSpec');
+    this._id = xmlElement.getAttribute('identifier');
     this._updateDisplay();
   },
   _updateDisplay: function() {
