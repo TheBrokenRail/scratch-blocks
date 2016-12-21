@@ -41,14 +41,12 @@ Blockly.Extensions.flyoutCategory = function() {
   for (var v = 0; v < Blockly.Extensions.EXTENSIONS.length; v++) {
     for (var i = 0; i < Blockly.Extensions.EXTENSIONS[v].length; i++) {
       var data = Blockly.Extensions.EXTENSIONS[v][i];
-      var spec = data.spec;
+      var jsonSpec = data.jsonSpec;
+      var xml = data.xml;
       var id = data.id;
-      var type = data.type;
-      var block = goog.dom.createDom('block');
-      block.setAttribute('type', 'extensions_block');
-      block.setAttribute('gap', 16);
-      var mutation = goog.dom.createDom('mutation');
-      mutation.setAttribute('spec', spec);
+      var div = goog.dom.createDom('div');
+      div.innerHTML = xml;
+      var block = div.children[0];
       var count = 0;
       for (var n = 0; n < xmlList.length; n++) {
         if (xmlList[n].lastChild == id) {
@@ -58,9 +56,8 @@ Blockly.Extensions.flyoutCategory = function() {
       if (count > 0) {
         id = id + '_' + count;
       }
-      mutation.setAttribute('id', id);
-      mutation.setAttribute('type', type);
-      block.appendChild(mutation);
+      block.setAttribute('extensionId', id);
+      block.setAttribute('type', 'extensions_block');
       xmlList.push(block);
     }
   }
