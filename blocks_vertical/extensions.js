@@ -34,16 +34,8 @@ Blockly.Blocks['extensions_block'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setCategory(Blockly.Categories.extensions);
-    this.setColour(Blockly.Colours.extensions.primary,
-      Blockly.Colours.extensions.secondary,
-      Blockly.Colours.extensions.tertiary);
-    this._spec = '';
-    this._id = '';
-    this._type = 'block';
-    this._subStackCount = 0;
+    this._jsonSpec = '';
+    this.jsonInit(this._jsonSpec);
   },
   /**
    * Create XML to represent the (non-editable) name and arguments.
@@ -52,9 +44,7 @@ Blockly.Blocks['extensions_block'] = {
    */
   mutationToDom: function() {
     var container = document.createElement('mutation');
-    container.setAttribute('spec', this._spec);
-    container.setAttribute('id', this._id);
-    container.setAttribute('type', this._type);
+    container.setAttribute('jsonSpec', this._jsonSpec);
     return container;
   },
   /**
@@ -63,93 +53,10 @@ Blockly.Blocks['extensions_block'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    this._spec = xmlElement.getAttribute('spec');
-    this._id = xmlElement.getAttribute('id');
-    this._type = xmlElement.getAttribute('type');
+    this._jsonSpec = xmlElement.getAttribute('spec');
     this._updateDisplay();
   },
   _updateDisplay: function() {
-    // Split the proc into components, by %n, %b, and %s (ignoring escaped).
-    var procComponents = this._spec.split(/(?=[^\\]\%[nbsc])/);
-    procComponents = procComponents.map(function(c) {
-      return c.trim(); // Strip whitespace.
-    });
-    // Create inputs and shadow blocks as appropriate.
-    var inputPrefix = 'input';
-    var inputCount = 0;
-    for (var i = 0, component; component = procComponents[i]; i++) {
-      var newLabel;
-      if (component.substring(0, 1) == '%') {
-        var inputType = component.substring(1, 2);
-        newLabel = component.substring(2).trim();
-        var inputName = inputPrefix + (inputCount++);
-        switch (inputType) {
-          case 'n':
-            var input = this.appendValueInput(inputName);
-            var num = this.workspace.newBlock('math_number');
-            num.setShadow(true);
-            num.outputConnection.connect(input.connection);
-            break;
-          case 'b':
-            var input = this.appendValueInput(inputName);
-            input.setCheck('Boolean');
-            break;
-          case 's':
-            var input = this.appendValueInput(inputName);
-            var text = this.workspace.newBlock('text');
-            text.setShadow(true);
-            text.outputConnection.connect(input.connection);
-            break;
-          case 'c':
-            var input = this.appendValueInput(inputName);
-            var colour = this.workspace.newBlock('colour_picker');
-            colour.setShadow(true);
-            colour.outputConnection.connect(input.connection);
-            break;
-          case 'i':
-            this.appendStatementInput('SUBSTACK' + this._subStackCount).appendField('');
-            this._subStackCount = this._subStackCount + 1;
-            break;
-        }
-      } else {
-        newLabel = component.trim();
-      }
-      this.appendDummyInput().appendField(newLabel.replace(/\\%/, '%'));
-    }
-    switch (this._type) {
-      case 'hat':
-        this.setOutput(false);
-        this.setPreviousStatement(false);
-        this.setNextStatement(true);
-        break;
-      case 'block':
-        this.setOutput(false);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        break;
-      case 'boolean':
-        this.setPreviousStatement(false);
-        this.setNextStatement(false);
-        this.setOutputShape(Blockly.OUTPUT_SHAPE_HEXAGONAL);
-        this.setOutput(true, 'Boolean');
-        break;
-      case 'reporter':
-        this.setPreviousStatement(false);
-        this.setNextStatement(false);
-        this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
-        this.setOutput(true, 'String');
-        break;
-      case 'cap':
-        this.setOutput(false);
-        this.setPreviousStatement(true);
-        this.setNextStatement(false);
-        break;
-      default:
-        this.setOutput(false);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        this._type = 'block';
-        break;
-    }
+    this.jsonInit(this._jsonSpec);
   }
 };
