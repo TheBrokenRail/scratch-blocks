@@ -56,7 +56,10 @@ Blockly.Extensions.flyoutCategory = function() {
       if (count > 0) {
         id = id + '_' + count;
       }
-      block.setAttribute('extensionId', id);
+      var mutation = goog.dom.createDom('mutation');
+      mutation.setAttribute('identifier', id);
+      mutation.setAttribute('jsonSpec', jsonSpec);
+      block.appendChild(mutation);
       block.setAttribute('type', 'extensions_block');
       xmlList.push(block);
     }
