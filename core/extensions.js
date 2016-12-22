@@ -27,8 +27,6 @@
 goog.provide('Blockly.Extensions');
 
 goog.require('Blockly.Blocks');
-goog.require('Blockly.Field');
-goog.require('Blockly.Names');
 goog.require('Blockly.Workspace');
 
 
