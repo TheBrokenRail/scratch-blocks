@@ -44,7 +44,6 @@ Blockly.Extensions.flyoutCategory = function() {
       jsonSpec.colour = Blockly.Colours.extensions.primary,
       jsonSpec.colourSecondary = Blockly.Colours.extensions.secondary;
       jsonSpec.colourTertiary = Blockly.Colours.extensions.tertiary;
-      jsonSpec = JSON.stringify(jsonSpec);
       var xml = data.xml;
       var id = data.id;
       var div = goog.dom.createDom('div');
