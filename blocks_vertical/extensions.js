@@ -36,7 +36,7 @@ Blockly.Blocks['extensions_block'] = {
   init: function() {
     this._jsonSpec = '';
     this._id = '';
-    this.jsonInit(this._jsonSpec);
+    this.jsonInit({"message0": "if on edge, bounce", "previousStatement": null, "nextStatement": null});
   },
   /**
    * Create XML to represent the (non-editable) name and arguments.
