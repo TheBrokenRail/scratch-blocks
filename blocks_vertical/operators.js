@@ -39,11 +39,13 @@ Blockly.Blocks['operator_add'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NUM1"
+            "name": "NUM1",
+            "check": "Number"
           },
           {
             "type": "input_value",
-            "name": "NUM2"
+            "name": "NUM2",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -69,11 +71,13 @@ Blockly.Blocks['operator_subtract'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NUM1"
+            "name": "NUM1",
+            "check": "Number"
           },
           {
             "type": "input_value",
-            "name": "NUM2"
+            "name": "NUM2",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -99,11 +103,13 @@ Blockly.Blocks['operator_multiply'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NUM1"
+            "name": "NUM1",
+            "check": "Number"
           },
           {
             "type": "input_value",
-            "name": "NUM2"
+            "name": "NUM2",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -129,11 +135,13 @@ Blockly.Blocks['operator_divide'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NUM1"
+            "name": "NUM1",
+            "check": "Number"
           },
           {
             "type": "input_value",
-            "name": "NUM2"
+            "name": "NUM2",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -159,11 +167,13 @@ Blockly.Blocks['operator_random'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "FROM"
+            "name": "FROM",
+            "check": "Number"
           },
           {
             "type": "input_value",
-            "name": "TO"
+            "name": "TO",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -188,11 +198,13 @@ Blockly.Blocks['operator_lt'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "OPERAND1"
+          "name": "OPERAND1",
+          "check": "Number"
         },
         {
           "type": "input_value",
-          "name": "OPERAND2"
+          "name": "OPERAND2",
+          "check": "Number"
         }
       ],
       "inputsInline": true,
@@ -246,11 +258,13 @@ Blockly.Blocks['operator_gt'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "OPERAND1"
+          "name": "OPERAND1",
+          "check": "Number"
         },
         {
           "type": "input_value",
-          "name": "OPERAND2"
+          "name": "OPERAND2",
+          "check": "Number"
         }
       ],
       "inputsInline": true,
@@ -392,7 +406,8 @@ Blockly.Blocks['operator_letter_of'] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "LETTER"
+          "name": "LETTER",
+          "check": "Number"
         },
         {
           "type": "input_value",
@@ -447,11 +462,13 @@ Blockly.Blocks['operator_mod'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NUM1"
+            "name": "NUM1",
+            "check": "Number"
           },
           {
             "type": "input_value",
-            "name": "NUM2"
+            "name": "NUM2",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -477,7 +494,8 @@ Blockly.Blocks['operator_round'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NUM"
+            "name": "NUM",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
@@ -548,7 +566,8 @@ Blockly.Blocks['operator_mathop'] = {
           },
           {
             "type": "input_value",
-            "name": "NUM"
+            "name": "NUM",
+            "check": "Number"
           }
         ],
         "inputsInline": true,
