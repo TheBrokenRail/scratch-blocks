@@ -1124,8 +1124,10 @@ Blockly.Block.prototype.jsonInit = function(json) {
   while (json['message' + i] !== undefined) {
     this.interpolate_(json['message' + i], json['args' + i] || [],
         json['lastDummyAlign' + i]);
+    this.lang = this.lang + json['message' + i] + ' ';
     i++;
   }
+  this.lang = this.lang.trim();
 
   if (json['inputsInline'] !== undefined) {
     this.setInputsInline(json['inputsInline']);
