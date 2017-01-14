@@ -189,7 +189,9 @@ Blockly.Blocks['looks_effectmenu'] = {
               ['pixelate', 'PIXELATE'],
               ['mosaic', 'MOSAIC'],
               ['brightness', 'BRIGHTNESS'],
-              ['ghost', 'GHOST']
+              ['ghost', 'GHOST'],
+              ['stretch x', 'STRETCHX'],
+              ['stretch y', 'STRETCHY']
             ]
           }
         ],
@@ -257,6 +259,31 @@ Blockly.Blocks['looks_seteffectto'] = {
       "colour": Blockly.Colours.looks.primary,
       "colourSecondary": Blockly.Colours.looks.secondary,
       "colourTertiary": Blockly.Colours.looks.tertiary
+    });
+  }
+};
+
+Blockly.Blocks['looks_graphiceffect'] = {
+  /**
+   * Block to set graphic effect.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "graphic effect %1",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "EFFECT"
+        }
+      ],
+      "inputsInline": true,
+      "output": "String",
+      "category": Blockly.Categories.looks,
+      "colour": Blockly.Colours.looks.primary,
+      "colourSecondary": Blockly.Colours.looks.secondary,
+      "colourTertiary": Blockly.Colours.looks.tertiary,
+      "outputShape": Blockly.OUTPUT_SHAPE_ROUND
     });
   }
 };
