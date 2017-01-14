@@ -242,6 +242,11 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '<block type="looks_backdroporder"></block>'+
     '<block type="looks_backdropname"></block>'+
     '<block type="looks_size"></block>'+
+    '<block type="looks_graphiceffect">'+
+      '<value name="EFFECT">'+
+        '<shadow type="looks_effectmenu"></shadow>'+
+      '</value>'+
+    '</block>'+
   '</category>'+
   '<category name="Sound" colour="#D65CD6" secondaryColour="#BD42BD">'+
     '<block type="sound_play">'+
