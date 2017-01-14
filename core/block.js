@@ -1121,13 +1121,14 @@ Blockly.Block.prototype.jsonInit = function(json) {
 
   // Interpolate the message blocks.
   var i = 0;
+  var lang = '';
   while (json['message' + i] !== undefined) {
     this.interpolate_(json['message' + i], json['args' + i] || [],
         json['lastDummyAlign' + i]);
-    this.lang = this.lang + json['message' + i] + ' ';
+    lang = lang + json['message' + i] + ' ';
     i++;
   }
-  this.lang = this.lang.trim();
+  lang = lang.trim();
 
   if (json['inputsInline'] !== undefined) {
     this.setInputsInline(json['inputsInline']);
@@ -1157,6 +1158,7 @@ Blockly.Block.prototype.jsonInit = function(json) {
   if (json['category'] !== undefined) {
     this.setCategory(json['category']);
   }
+  return lang;
 };
 
 /**
