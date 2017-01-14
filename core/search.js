@@ -37,6 +37,8 @@ goog.require('Blockly.Workspace');
  */
 Blockly.Search.NAME_TYPE = 'SEARCH';
 
+Blockly.Search.SEARCH = '';
+
 /**
  * Construct the blocks required by the flyout for the procedure category.
  * @param {!Blockly.Workspace} workspace The workspace contianing procedures.
@@ -44,25 +46,44 @@ Blockly.Search.NAME_TYPE = 'SEARCH';
  */
 Blockly.Search.flyoutCategory = function(workspace) {
   var xmlList = [];
-  var search = goog.dom.createDom('input');
-  function populateSearch() {
-    for (var i = 0; i < procedureList.length; i++) {
-      var name = procedureList[i][0];
-      var args = procedureList[i][1];
-      var block = goog.dom.createDom('block');
-      block.setAttribute('type', templateName);
-      block.setAttribute('gap', 16);
-      var mutation = goog.dom.createDom('mutation');
-      mutation.setAttribute('name', name);
-      block.appendChild(mutation);
-      for (var j = 0; j < args.length; j++) {
-        var arg = goog.dom.createDom('arg');
-        arg.setAttribute('name', args[j]);
-        mutation.appendChild(arg);
+  var button = goog.dom.createDom('button');
+  button.setAttribute('text', 'Search');
+  button.setAttribute('callbackKey', 'SEARCH');
+  Blockly.registerButtonCallback('SEARCH', function(button) {
+    Blockly.Variables.createVariable(button.getTargetWorkspace());
+  });
+  xmlList.push(button);
+  var toolbox = workspace.options.languageTree.getElementsByTagName('block');
+  function populateSearch(toolbox) {
+    var x = 0;
+    for (x in Blockly.Blocks) {
+      if (Blockly.Blocks[x].lang.indexOf(Blockly.Search.SEARCH) != -1) {
+        var i = 0;
+        for (i = 0; i < toolbox.length; i++) {
+          if (toolbox[i].getAttribute('type') === x) {
+            xmlList.push(toolbox[i]);
+          }
+        }
       }
-      xmlList.push(block);
     }
   }
-  populateSearch();
+  populateSearch(toolbox);
   return xmlList;
+};
+
+Blockly.Search.getSearch = function() {
+  Blockly.Search.promptSearch('Enter Search', '', function (text) {
+    Blockly.Search.SEARCH = text;
+  });
+};
+
+Blockly.Search.promptSearch = function(promptText, defaultText, callback) {
+  Blockly.prompt(promptText, defaultText, function(newVar) {
+    // Merge runs of whitespace.  Strip leading and trailing whitespace.
+    // Beyond this, all names are legal.
+    if (newVar) {
+      newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+    }
+    callback(newVar);
+  });
 };
