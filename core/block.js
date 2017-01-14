@@ -1129,7 +1129,9 @@ Blockly.Block.prototype.jsonInit = function(json) {
     i++;
   }
   lang = lang.trim();
-
+  if (json['id'] !== undefined) {
+    Blockly.Blocks[json['id']].lang = lang;
+  }
   if (json['inputsInline'] !== undefined) {
     this.setInputsInline(json['inputsInline']);
   }
@@ -1158,7 +1160,6 @@ Blockly.Block.prototype.jsonInit = function(json) {
   if (json['category'] !== undefined) {
     this.setCategory(json['category']);
   }
-  return lang;
 };
 
 /**
