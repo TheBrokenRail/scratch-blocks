@@ -752,4 +752,5 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '</block>'+
   '</category>'+
   '<category name="More Blocks" colour="#FF6680" secondaryColour="#FF3355" custom="PROCEDURE"></category>'+
+  '<category name="Search" colour="#FF6680" secondaryColour="#FF3355" custom="SEARCH"></category>'+
   '</xml>';
