@@ -57,7 +57,7 @@ Blockly.Search.flyoutCategory = function(workspace) {
   function populateSearch(toolbox) {
     var x = 0;
     for (x in Blockly.Blocks) {
-      if (Blockly.Blocks[x].init().indexOf(Blockly.Search.SEARCH) != -1) {
+      if (Blockly.Blocks[x].lang.indexOf(Blockly.Search.SEARCH) != -1) {
         var i = 0;
         for (i = 0; i < toolbox.length; i++) {
           if (toolbox[i].getAttribute('type') === x) {
