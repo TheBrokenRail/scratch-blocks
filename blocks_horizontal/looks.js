@@ -60,68 +60,6 @@ Blockly.Blocks['looks_changesizeby'] = {
   }
 };
 
-Blockly.Blocks['looks_shrink'] = {
-  /**
-   * Block to move steps.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "%1 %2",
-      "args0": [
-        {
-          "type": "field_image",
-          "src": Blockly.mainWorkspace.options.pathToMedia + "icons/looks_shrink.svg",
-          "width": 40,
-          "height": 40,
-          "alt": "Shrink by",
-          "flip_rtl": true
-        },
-        {
-          "type": "input_value",
-          "name": "CHANGE"
-        }
-      ],
-      "inputsInline": true,
-      "previousStatement": null,
-      "nextStatement": null,
-      "category": Blockly.Categories.looks,
-      "colour": Blockly.Colours.looks.primary,
-      "colourSecondary": Blockly.Colours.looks.secondary,
-      "colourTertiary": Blockly.Colours.looks.tertiary
-    });
-  }
-};
-
-Blockly.Blocks['looks_reset'] = {
-  /**
-   * Block to move steps.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "%1",
-      "args0": [
-        {
-          "type": "field_image",
-          "src": Blockly.mainWorkspace.options.pathToMedia + "icons/looks_reset.svg",
-          "width": 40,
-          "height": 40,
-          "alt": "Reset size",
-          "flip_rtl": true
-        }
-      ],
-      "inputsInline": true,
-      "previousStatement": null,
-      "nextStatement": null,
-      "category": Blockly.Categories.looks,
-      "colour": Blockly.Colours.looks.primary,
-      "colourSecondary": Blockly.Colours.looks.secondary,
-      "colourTertiary": Blockly.Colours.looks.tertiary
-    });
-  }
-};
-
 Blockly.Blocks['looks_show'] = {
   /**
    * Block to move steps.
