@@ -88,35 +88,6 @@ Blockly.Blocks['event_whenthisspriteclicked'] = {
   }
 };
 
-Blockly.Blocks['event_bump'] = {
-  /**
-   * Block for when flag clicked.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "id": "event_whenflagclicked",
-      "message0": "%1",
-      "args0": [
-        {
-          "type": "field_image",
-          "src": Blockly.mainWorkspace.options.pathToMedia + "icons/event_bump.svg",
-          "width": 40,
-          "height": 40,
-          "alt": "When bumped",
-          "flip_rtl": true
-        }
-      ],
-      "inputsInline": true,
-      "nextStatement": null,
-      "category": Blockly.Categories.event,
-      "colour": Blockly.Colours.event.primary,
-      "colourSecondary": Blockly.Colours.event.secondary,
-      "colourTertiary": Blockly.Colours.event.tertiary
-    });
-  }
-};
-
 Blockly.Blocks['dropdown_whenbroadcast'] = {
   /**
    * Block for when broadcast dropdown (used for shadow).
