@@ -32,7 +32,6 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '<category name="Events" colour="#FFD500" secondaryColour="#CC9900">' +
         '<block type="event_whenflagclicked"></block>' +
         '<block type="event_whenthisspriteclicked"></block>' +
-        '<block type="event_bump"></block>' +
         '<block type="event_whenbroadcastreceived">' +
         '<value name="CHOICE">' +
         '<shadow type="dropdown_whenbroadcast">' +
@@ -112,34 +111,6 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
               '</shadow>'+
             '</value>'+
           '</block>'+
-          '<block type="motion_moveup">'+
-            '<value name="STEPS">'+
-              '<shadow type="math_number">'+
-                '<field name="NUM">10</field>'+
-              '</shadow>'+
-            '</value>'+
-          '</block>'+
-          '<block type="motion_hop">'+
-            '<value name="STEPS">'+
-              '<shadow type="math_number">'+
-                '<field name="NUM">10</field>'+
-              '</shadow>'+
-            '</value>'+
-          '</block>'+
-          '<block type="motion_movedown">'+
-            '<value name="STEPS">'+
-              '<shadow type="math_number">'+
-                '<field name="NUM">10</field>'+
-              '</shadow>'+
-            '</value>'+
-          '</block>'+
-          '<block type="motion_moveback">'+
-            '<value name="STEPS">'+
-              '<shadow type="math_number">'+
-                '<field name="NUM">10</field>'+
-              '</shadow>'+
-            '</value>'+
-          '</block>'+
           '<block type="motion_turnright">'+
             '<value name="DEGREES">'+
               '<shadow type="math_number">'+
@@ -154,7 +125,6 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
               '</shadow>'+
             '</value>'+
           '</block>'+
-          '<block type="motion_home"></block>'+
         '</category>'+
         '<category name="Looks" colour="#9966FF" secondaryColour="#774DCB">'+
           '<block type="looks_changesizeby">'+
