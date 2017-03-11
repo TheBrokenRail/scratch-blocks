@@ -884,6 +884,9 @@ Blockly.BlockSvg.prototype.computeOutputPadding_ = function(inputRows) {
   } else {
     // Value input comes first in the row.
     var inputConnection = firstInput.connection;
+    if (!inputConnection) {
+      return;
+    }
     if (!inputConnection.targetConnection) {
       // Not connected: use the drawn shape.
       otherShape = inputConnection.getOutputShape();
