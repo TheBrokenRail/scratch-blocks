@@ -81,6 +81,8 @@ Blockly.Xml.blockToDom = function(block, opt_noId) {
   if (!opt_noId) {
     element.setAttribute('id', block.id);
   }
+  // Output Shape for undefined
+  element.setAttribute('outputShape', block.getOutputShape());
   if (block.mutationToDom) {
     // Custom data for an advanced block.
     var mutation = block.mutationToDom();
@@ -416,6 +418,10 @@ Blockly.Xml.domToBlock = function(xmlBlock, workspace) {
 Blockly.Xml.domToBlockHeadless_ = function(xmlBlock, workspace) {
   var block = null;
   var prototypeName = xmlBlock.getAttribute('type');
+  var blockObj = Blockly.Blocks[prototypeName];
+  if (!blockObj) {
+    prototypeName = "undefined";
+  }
   goog.asserts.assert(prototypeName, 'Block type unspecified: %s',
                       xmlBlock.outerHTML);
   var id = xmlBlock.getAttribute('id');
@@ -496,10 +502,16 @@ Blockly.Xml.domToBlockHeadless_ = function(xmlBlock, workspace) {
       case 'value':
       case 'statement':
         input = block.getInput(name);
-        if (!input) {
+        if (!input && blockObj) {
           console.warn('Ignoring non-existent input ' + name + ' in block ' +
                        prototypeName);
           break;
+        } else if (!input) {
+          if (xmlChild.nodeName.toLowerCase() === "value") {
+            block.appendValueInput(name);
+          } else if (xmlChild.nodeName.toLowerCase() === "statement") {
+            block.appendStatementInput(name);
+          }
         }
         if (childShadowNode) {
           input.connection.setShadowDom(childShadowNode);
