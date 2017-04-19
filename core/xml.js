@@ -81,8 +81,10 @@ Blockly.Xml.blockToDom = function(block, opt_noId) {
   if (!opt_noId) {
     element.setAttribute('id', block.id);
   }
-  // Output Shape for undefined
+  // Output Shape and Next/Previous Statements for undefined
   element.setAttribute('outputShape', block.getOutputShape());
+  element.setAttribute('nextStatement', block.getOutputShape());
+  element.setAttribute('previousStatement', block.getOutputShape());
   if (block.mutationToDom) {
     // Custom data for an advanced block.
     var mutation = block.mutationToDom();
