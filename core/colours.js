@@ -45,6 +45,11 @@ Blockly.Colours = {
     "secondary": "#EC9C13",
     "tertiary": "#CF8B17"
   },
+  "control_stripe": {
+    "primary": "#FFE1AE",
+    "secondary": "#F8DCAC",
+    "tertiary": "#F5D8A6"
+  },
   "event": {
     "primary": "#FFBF00",
     "secondary": "#E6AC00",
