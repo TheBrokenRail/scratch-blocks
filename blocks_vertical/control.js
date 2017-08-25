@@ -69,6 +69,7 @@ Blockly.Blocks['control_forever'] = {
           Blockly.Colours.control_stripe.secondary,
           Blockly.Colours.control_stripe.tertiary
         );
+        this.stripe = true;
       } else {
         this.setColour(
           Blockly.Colours.control.primary,
