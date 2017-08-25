@@ -59,6 +59,31 @@ Blockly.Blocks['control_forever'] = {
       "category": Blockly.Categories.control,
       "extensions": ["colours_control", "shape_end"]
     });
+  },
+  stripe: false,
+  onchange: function() {
+    if (this.getSurroundParent()) {
+      if (!this.getSurroundParent().stripe) {
+        this.setColour(
+          Blockly.Colours.control_stripe.primary,
+          Blockly.Colours.control_stripe.secondary,
+          Blockly.Colours.control_stripe.tertiary
+        );
+      } else {
+        this.setColour(
+          Blockly.Colours.control.primary,
+          Blockly.Colours.control.secondary,
+          Blockly.Colours.control.tertiary
+        );
+      }
+    } else {
+      this.stripe = false;
+      this.setColour(
+        Blockly.Colours.control.primary,
+        Blockly.Colours.control.secondary,
+        Blockly.Colours.control.tertiary
+      );
+    }
   }
 };
 
